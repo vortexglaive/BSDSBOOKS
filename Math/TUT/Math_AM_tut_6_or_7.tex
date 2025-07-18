@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Math AM tut 6 or 7}
+\date{8th Nov 2024}
+\author{abobla}
+
+\begin{document}
+\maketitle
+\section{}
+How to combine two types of improper Riemann integrals?\\
+\\
+When $f:(0,\infty)\rightarrow \mathbb R$ is such that it blows up near zero, and $f\in \bold{R}[\infty)$, then we say that f is Riemann Integrable on $(0,\infty)$
+(and write $f \in \bold R(0,\infty)$), and define\\
+\begin{equation}
+    \int_{(0,\infty)} f(x) \mathrm d x = \int_{0}^{\infty}f(x) \mathrm d x = \int_{(0,1]}f(x) \mathrm d x + \int_{[1,\infty)}f(x) \mathrm d x
+\end{equation}
+Ex: For each $\alpha \in (0,\infty)$, define a map $f:(0,\infty)\rightarrow(0,\infty)$ by $f(x):= x^{\alpha-1}e^{-x}$, $x\in(0,\infty)$. Clearly $f\in \bold{R}[0,\infty)$.
+\\
+\\
+Qn: is $\int_{0}^{1} f(x) \mathrm{d} x < \infty$\\
+case 1: $\alpha \geq 1$\\
+then $f(x) = x^{\alpha-1}e^{-x}$ : $x \in [0,1]$ is a continous function on $[0,1]$ and hence $f \in \bold R[0,1]\implies\int_{0}^{1}f(x) \mathrm d x < \infty$, hence if $\alpha=1$, then $f\in \bold R(0,\infty)$\\
+case 2: $\alpha < 1$ means $\alpha \in (0,1)$.\\
+Define
+\begin{equation}
+    g(x) = \frac{1}{x^{1-\alpha}}:x \in (0,1]
+\end{equation}
+and look at $f|_{[0,1]}$, ie,
+\begin{equation}
+    f(x) = \frac{e^{-x}}{x^{1-\alpha}}: x \in (0,1]
+\end{equation}
+Note: $f,g\in \bold R[\epsilon,1]\:\forall\:\epsilon\:\in (0,1)$ and both are positive valued functions and
+\begin{equation}
+    \underset{x\rightarrow0^{+}}{\lim} \frac{f(x)}{g(x)} = \underset{x \rightarrow 0{+}}{\lim} e^{-x} = 1 \in (0,\infty)
+\end{equation}
+Moreover $g(x) = \frac{1}{x^5}$  $x\in(0,1]$ where $s = 1-\alpha \in (0,1)$ is done as an excercise. hence $g \in \bold (0,1]$, hence $\int_{0}^{1}g(x) \mathrm d x < \infty$\\
+so by ratio test. $\int_{0}^{1}f(x)\mathrm d x < \infty$ Now, combining everything, we get that $\forall \alpha \in (0,\infty)$, $\int_{0}^{\infty}x^{\alpha-1}e^{-x}\mathrm d x$=$\int_{0}^{1}x^{\alpha-1}e^{-x}\mathrm d x$+$\int_{1}^{\infty}x^{\alpha-1}e^{-x} \mathrm d x$
+\section{Gamma Function}
+$\forall \alpha \in (0,\infty)$, $\Gamma(\alpha)$ =  $\int_{0}^{\infty}x^{\alpha-1}e^{-x}\mathrm d x$ (Gamma function), Note that $\Gamma:(0,\infty)\rightarrow(0,\infty)$\\
+Show that :
+\begin{equation}
+    \Gamma(\alpha + 1) = \alpha \Gamma(\alpha) \:\: \alpha \in (0,\infty)
+\end{equation}
+use by parts\\
+Show that \\
+\begin{equation}
+    \Gamma(n) = (n-1)!\:\:\forall n \in \mathbb N 
+\end{equation}
+Use the first one and induction
+\section{}
+Show that $\int_{0}^{\infty}\frac{1}{x^2 + \sqrt{x}} \mathrm d x < \infty$\\
+ans:\\
+(Hint: Compare with $\frac{1}{\sqrt x}$ on 0 to 1 and with $\frac{1}{x^2} on 1 to \infty$)
+\end{document}
